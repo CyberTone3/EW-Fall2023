@@ -1,0 +1,111 @@
+body {
+    width: 100%;
+    background-color: skyblue;
+}
+.row {
+    display: flex;
+    margin: 30px;
+}
+.row .profile-image {
+    margin: auto;
+}
+.row .secOnepara {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: navy;
+}
+.profile-image {
+    height: 450px;
+    border-radius: 15px;
+    
+   
+}
+.one p {
+    width: 500px;
+    border-radius: 10px;
+    background-color: seashell;
+    font-size: 20px;
+    
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav a { 
+    font-size: 20px;
+    padding: 30px;
+    margin: 0 30px;
+   
+}
+hr {
+    width: 75%;
+}
+.secTwodiv {
+    display: inline-block;
+}
+h2 {
+    font-size: 30px;
+}
+.imageLinks {
+    display: flex;
+    
+}
+.imageLinks img {
+    display: block;
+    height: 350px;
+    padding: 30px;
+    border: slateblue solid 2px;
+    background-color: aquamarine;
+    
+}
+
+.three .section {
+    display: flex;
+   
+}
+.secThreediv {
+    width: 33%;
+    display: inline-block;
+}
+ul img {
+    height: 450px;
+    width: 350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 680px) {
+    .secOne {
+        display: block;
+        width: 100%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .one p {
+        position: relative;
+        width: 500px;
+        border-radius: 10px;
+        background-color: seashell;
+        font-size: 20px;
+        left: 33%;
+    }
+        
+    }
+

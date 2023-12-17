@@ -1,0 +1,67 @@
+:root {
+    --cell-size: 100px;
+
+    --color: #81c3fd;/* for hover */
+    --color-set: #0275d8;/* when set */
+    --1: 10px; /* X line-width */
+}
+
+body {
+    margin: 0;
+}
+
+/*Starting with visualizing our HTML, the margin creates spaces between elements with defined borders, here it is used to make zero borders for the whole screen. After that we describe the element with our board class name, specifying its width, height, how and where it is displayed.*/
+/*grid-template-columns is a less known property (here is a nice article about grid-template-columns), so to keep it simple, it specifies the number and width/s of columns in a grid layout. This way we make our 9 cells for playing.*/
+.board { 
+    width: 100vw;/* What in the world is vw? Look up */
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+
+}
+
+/*Here we specify how we want our cells to look. Starting with width and height, followed by width and color of the borders, display, position and cursor*/
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/*For a given cell we specify that there should not be a border. We select a cell using the nth-child selector where you write the number of a cell to select that element/cell.*/
+.cell:nth-child(1), .cell:nth-child(2), .cell:nth-child(3) {
+    border-top: none;
+}
+.cell:nth-child(1), .cell:nth-child(4), .cell:nth-child(7) {
+    border-left: none;
+}
+.cell:nth-child(3), .cell:nth-child(6), .cell:nth-child(9) {
+    border-right: none;
+}    
+.cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
+    border-bottom: none;
+}
+.cell.x, .cell.circle {
+    cursor: not-allowed;
+}/* Here I determined that there is no hover effect if the cell is already filled with one of our two characters.*/
+
+
+/*This Code is for the cross*/
+.board.x .cell:not(.circle):not(.x):hover {
+    background: linear-gradient(to top right, transparent calc(50% - var(--1) / 2), var(--color) calc(50% - 
+                var(--1) / 2) calc(50% + var(--1) / 2), transparent calc(50% + var(--1) / 2)),
+                linear-gradient(to bottom right, transparent calc(50% - var(--1) / 2), var(--color) calc(50% - 
+                var(--1) / 2) calc(50% + var(--1) / 2), transparent calc(50% + var(--1) / 2));
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;            
+}
+
+/*For color...
